@@ -1,0 +1,48 @@
+study_area:
+  tiger_year: 2018        # TIGER/20XX/Counties dataset version
+  states:
+    - fips: "17"          # Illinois
+      name: Illinois
+      counties:
+        - McHenry
+        - Cook
+        - Lake
+        - Kane
+        - DuPage
+        - Will
+        - Kendall
+        - Grundy
+        - DeKalb
+        - Boone
+
+collection:
+  date_range:
+    start: "2015-01-01"
+    end:   "2025-12-31"
+  max_cloud_cover: 20     # percent
+  landsat_collections:
+    - LANDSAT/LC08/C02/T1_L2   # Landsat 8
+    - LANDSAT/LC09/C02/T1_L2   # Landsat 9
+  bands:
+    - SR_B2   # Blue
+    - SR_B3   # Green
+    - SR_B4   # Red
+    - SR_B5   # NIR
+    - SR_B6   # SWIR1
+    - SR_B7   # SWIR2
+
+land_cover:
+  enabled: true
+  dataset: "USGS/NLCD_RELEASES/2021_REL/NLCD"
+  year: 2021
+  output_file: "data_collected/land_cover.csv"
+
+processing:
+  scale: 30               # meters — Landsat native resolution
+  max_pixels: 1000000000  # Must be an integer
+
+output:
+  bands_file: "data_collected/band_reflectance.csv"
+  boundaries_file: "data_collected/county_boundaries.geojson"
+  plot_file: "visualizations/spectral_indices.png"
+  plot_dpi: 150

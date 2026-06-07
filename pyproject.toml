@@ -1,0 +1,14 @@
+[project]
+name = "northern-illinois-canopy-analysis"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "dotenv>=0.9.9",
+    "pyyaml>=6.0",
+    "tqdm>=4.0",
+    "earthengine-api>=1.7.29",
+    "matplotlib>=3.10.9",
+    "pandas>=3.0.3",
+]

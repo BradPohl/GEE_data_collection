@@ -1,0 +1,7 @@
+.venv/
+data_collected/
+visualizations/
+__pycache__/
+*.pyc
+.env
+.git/

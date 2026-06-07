@@ -1,0 +1,18 @@
+version: '3'
+
+tasks:
+  setup:
+    desc: Install dependencies and authenticate with Google Earth Engine
+    cmds:
+      - uv sync
+      - uv run python -c "import ee; ee.Authenticate()"
+
+  download:
+    desc: Download raw band reflectances, land cover, and county boundaries from Earth Engine
+    cmds:
+      - uv run python landsat_data_collection.py
+
+  report:
+    desc: Compute spectral indices and generate visualizations from collected data (no EE calls)
+    cmds:
+      - uv run python report.py
